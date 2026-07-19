@@ -3,7 +3,7 @@ import joblib
 from sklearn.linear_model import LogisticRegression
 
 # Define paths
-DATA_PATH = "sonar data.csv"
+DATA_PATH = "sonar_data.csv"
 MODEL_PATH = "model.pkl"
 
 print("Loading dataset...")
