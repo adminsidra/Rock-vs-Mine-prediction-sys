@@ -15,7 +15,7 @@ st.set_page_config(
 
 # Define paths
 MODEL_PATH = "sonar_model.pkl"
-DATA_PATH = "Copy of sonar data.csv"
+DATA_PATH = "sonar data.csv"
 
 # Custom CSS for modern styling
 st.markdown("""
