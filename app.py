@@ -14,7 +14,7 @@ st.set_page_config(
 )
 
 # Define paths
-MODEL_PATH = "sonar_model.pkl"
+MODEL_PATH = "model.pkl"
 DATA_PATH = "sonar data.csv"
 
 # Custom CSS for modern styling
@@ -90,7 +90,7 @@ def load_or_train_model():
         sonar_data = pd.read_csv(DATA_PATH, header=None)
         
         # Separate features and target
-        X = sonar_data.drop(columns=60, axis=1)
+        X = sonar_data.drop(columns=[60])
         Y = sonar_data[60]
         
         # Train model

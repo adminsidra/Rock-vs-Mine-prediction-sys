@@ -10,7 +10,7 @@ An end-to-end Machine Learning web application built using **Streamlit** and **S
 - **60-Frequency Input Form:** Input numerical values for all 60 distinct sonar signal features.
 - **Real-Time Prediction:** Immediate classification of the input signal as Rock or Mine.
 - **Confidence Visualization:** Provides prediction confidence scores (probabilities) represented visually with progress bars.
-- **Self-Healing Model Pipeline:** Automatically trains a new Logistic Regression model if no pre-trained model checkpoint (`sonar_model.pkl`) is detected locally.
+- **Self-Healing Model Pipeline:** Automatically trains a new Logistic Regression model if no pre-trained model checkpoint (`model.pkl`) is detected locally.
 
 ---
 
@@ -18,6 +18,8 @@ An end-to-end Machine Learning web application built using **Streamlit** and **S
 
 ```markdown
 ├── app.py                            # Streamlit Web Application & Prediction Pipeline
+├── model.pkl                         # Pre-trained Logistic Regression model checkpoint
+├── train.py                          # Script to train the ML model
 ├── sonar data.csv                    # Sonar dataset used for training/validation
 ├── Rock_vs_Mine_Prediction.ipynb     # Jupyter Notebook containing model exploration & training tests
 ├── requirements.txt                  # Python dependencies
@@ -82,7 +84,7 @@ The model is trained on the **Sonar, Mines vs. Rocks Dataset** containing 208 in
 
 ## 💡 How It Works
 
-1. When you run `app.py`, the system checks for a saved model file `sonar_model.pkl`.
-2. If the model file is not found, the application automatically loads `sonar data.csv`, trains a **Logistic Regression** model, saves the trained model to `sonar_model.pkl`, and uses it.
+1. When you run `app.py`, the system checks for a saved model file `model.pkl`.
+2. If the model file is not found, the application automatically loads `sonar data.csv`, trains a **Logistic Regression** model, saves the trained model to `model.pkl`, and uses it.
 3. Users input 60 sonar values through the UI form and click **🔍 Predict Object**.
 4. The application processes the input data, shapes it, and uses the model to predict the class and compute the confidence score.
